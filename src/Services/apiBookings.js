@@ -102,14 +102,14 @@ return data;
 
 export async function deleteBooking(id) {
   // REMEMBER RLS POLICIES
-  // const { data, error } = await supabase.from("booking").delete().eq("id", id);
+   const { data, error } = await supabase.from("booking").delete().eq("id", id);
 
-  // if (error) {
-  //   console.error(error);
-  //   toast.error("Booking could not be deleted");
-  //   throw new Error("Booking could not be deleted");
-  // }
-  // toast.success("deleted successfully");
-  // return data;
+   if (error) {
+   console.error(error);
+   toast.error("Booking could not be deleted");
+     throw new Error("Booking could not be deleted");
+   }
+   toast.success("deleted successfully");
+   return data;
   console.log(id)
 }
