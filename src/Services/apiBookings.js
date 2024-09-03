@@ -2,6 +2,10 @@
 
 import { getToday } from "./helpers";
 import supabase from "./supabase";
+<<<<<<< HEAD
+=======
+import { toast } from 'react-hot-toast';
+>>>>>>> fa3416c (last change)
 
 export async function getAllBookings() {
   const { data, error } = await supabase
@@ -105,11 +109,19 @@ export async function deleteBooking(id) {
    const { data, error } = await supabase.from("booking").delete().eq("id", id);
 
    if (error) {
+<<<<<<< HEAD
    console.error(error);
+=======
+  
+>>>>>>> fa3416c (last change)
    toast.error("Booking could not be deleted");
      throw new Error("Booking could not be deleted");
    }
    toast.success("deleted successfully");
    return data;
+<<<<<<< HEAD
   console.log(id)
+=======
+  
+>>>>>>> fa3416c (last change)
 }
